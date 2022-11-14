@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,400;1,200;1,700&family=Raleway:ital,wght@0,200;0,400;0,600;1,300&display=swap');
+
+.main {
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(52, 52, 52);
+    height: 100%;
+    font-family:'Josefin Sans'; 
+    font-size: 25px;
+    margin: 0;
+    color: rgba(245, 245, 245, 0.973);
+    padding: 70px 0;
+}
+
+.bullet {
+    list-style-type: none; 
+}
+
+.button1 {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-right: 40px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    transition-duration: 0.4s;
+}
+
+.button1:hover {
+    border-radius: 50px 50px 50px 50px;
+    padding: 16px 36px;
+}
+
+.button2 {
+    border: none;
+    color: white;
+    padding: 15px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #e9441b;
+    transition-duration: 0.4s;
+}
+
+.button2:hover {
+    border-radius: 50px 50px 50px 50px;
+    padding: 16px 26px;
+}
+
+.smallDesc {
+    font-family:'Josefin Sans'; 
+    font-weight: 400;
+    font-size: 25px;
+
+}

@@ -1,0 +1,37 @@
+.main {
+    text-align: center;
+    margin: auto;
+    border: 3px;
+    padding: 5%;
+}
+
+.user {
+    height: 30px;
+    width: 200px;
+}
+
+.password {
+    height: 30px;
+    width: 200px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 12px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    border-radius: 50px 50px 50px 50px;
+    padding: 16px 30px;
+}

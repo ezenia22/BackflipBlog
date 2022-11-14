@@ -1,0 +1,30 @@
+[
+  {
+    "post": [
+      {
+        "_id": 1,
+        "name": "Truong",
+        "post-image": "images/truong.png",
+        "post-desc": "What a boring day it is :(",
+        "like": 4,
+        "dislike": 1
+      },
+      {
+        "_id": 2,
+        "name": "Xin Long",
+        "post-image": "",
+        "post-desc": "Just went out on a date hehe",
+        "like": 104,
+        "dislike": 8
+      },
+      {
+        "_id": 3,
+        "name": "Babi",
+        "post-image": "",
+        "post-desc": "I hope I won't be eaten today O.o",
+        "like": 34,
+        "dislike": 2
+      }
+    ]
+  }
+]
