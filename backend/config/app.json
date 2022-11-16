@@ -1,0 +1,8 @@
+{
+	"tokenSecret":"gbTokenSecret",
+	"userFileStorage": {
+		"privateAccess": {
+			"folderPath": "user_file_storage"
+		}
+	}
+}

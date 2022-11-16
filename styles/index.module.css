@@ -12,6 +12,17 @@
     padding: 70px 0;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 100px;
+    justify-content: space-evenly;
+}
+
+.form {
+    padding: 40%;    
+}
+
 .bullet {
     list-style-type: none; 
 }

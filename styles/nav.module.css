@@ -5,7 +5,6 @@
     color: #fff;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
   }
   
   .logo {
@@ -14,9 +13,9 @@
 
   .nav ul {
     display: flex;
-    justify-content: center;
     align-items: center;
     list-style: none;
+    justify-content: flex-end;
   }
   
   .nav ul li a {

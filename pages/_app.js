@@ -1,8 +1,16 @@
 import '../styles/globals.css'
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import reducers from './reducers'
+
+const store = createStore(reducers, compose(applyMiddleware(thunk)))
 
 function MyApp({ Component, pageProps }) {
     return (
-        <Component {...pageProps} />
+        <Provider store={store}>
+            <Component {...pageProps} />
+        </Provider>
     )
 }
 
