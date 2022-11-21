@@ -1,10 +1,14 @@
 import styles from '../styles/login.module.css';
+import Head from 'next/head';
 
 
 function LogIn() {
     return (
         <div className={styles.main}>
-            <form autoComplete='off' action="/send-data-here" method="post" className={styles.form}>
+            <Head>
+                <title>Log In</title>
+            </Head>
+            <form autoComplete='off' action="/" method="post" className={styles.form}>
                 <div className={styles.title}>Welcome</div>
                 <div className={styles.subtitle}>Let's log into your account!</div>
                 <div className={styles.inputContainer1}>
@@ -17,7 +21,7 @@ function LogIn() {
                     <div className={styles.cut}></div>
                     <label for="password" className={styles.placeholder}>Password</label>
                 </div>
-                <button type="text" className={styles.submit}>submit</button>
+                <button type="text" className={styles.submit}>Log in</button>
             </form>
         </div>
     )

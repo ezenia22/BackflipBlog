@@ -42,23 +42,23 @@ export default function HomePage() {
         <Head>
           <title>Backflip Blog</title>
         </Head>
-        <header>
+        <header className={styles.header}> 
           <Header title="The Backflip Blog" />
           <br />
           <Image src={banner} alt='/' width="1600px" height="320px" />
           <br />
           <br />
           <AboutText desc="Welcome to the Backflip Blog where imagination goes wild." />
-          <AboutText desc="The rules are... you are not allowed to post anything you want, unless you are able to do a backflip ;)" />
+          <AboutText desc="The rules are... you are not allowed to post anything you want, unless you are able to do a backflip ;)"/>
         </header>
         <br />
         <br />
-
+        <h3>Welcome to your posts</h3>
         <main className={styles.container}>
-          <section>
+          <section className={styles.post}>
             <Posts />
           </section>
-          <section>
+          <section className={styles.form}>
             <Form />
           </section>
         </main>
