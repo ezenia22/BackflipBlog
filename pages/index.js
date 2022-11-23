@@ -21,20 +21,9 @@ function AboutText({ desc }) {
 export default function HomePage() {
   const dispatch = useDispatch();
 
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setdisLikes] = useState(0);
-
   useEffect(() => {
     dispatch(getPosts());
   }, [dispatch]);
-
-  function likeClick() {
-    setLikes(likes + 1);
-  }
-
-  function dislikeClick() {
-    setdisLikes(dislikes + 1);
-  }
 
   return (
     <Layout>
@@ -62,8 +51,6 @@ export default function HomePage() {
             <Form />
           </section>
         </main>
-        <button className={styles.button1} onClick={likeClick}><b>Like ({likes})</b></button>
-        <button className={styles.button2} onClick={dislikeClick}><b>Dislike ({dislikes})</b></button>
       </div>
     </Layout>
   );

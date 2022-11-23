@@ -36,7 +36,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-radius: 15px;
+    border-radius: 30px;
     height: 100%;
     position: relative;
 }
@@ -46,6 +46,7 @@
     top: 20px;
     left: 20px;
     color: white;
+    text-align: left;
 }
 
 .overlay2 {
@@ -67,6 +68,11 @@
 
 .title {
     padding: 0 16px;
+    text-align: left;
+}
+
+.message {
+    text-align: left;
 }
 
 .cardActions {
