@@ -30,9 +30,9 @@ export const getPost = async (req, res) => {
 
 // CREATE
 export const createPost = async (req, res) => {
-    const { title, message, selectedFile, creator, tags } = req.body;
+    const post = req.body;
 
-    const newPost = new PostMessage({ title, message, selectedFile, creator, tags })
+    const newPost = new PostMessage({ ...post, creator: req.userid, createdAt: new Date().toISOString() })
 
     try {
         await newPost.save();
@@ -58,26 +58,50 @@ export const deletePost = async (req, res) => {
 export const likePost = async (req, res) => {
     const { id } = req.params;
 
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
-    
+    if(!req.userId) { 
+        return res.json({ message: 'Unauthenticated' })
+    };
+
+    if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);;
+
     const post = await PostMessage.findById(id);
 
-    const updatedPost = await PostMessage.findByIdAndUpdate(id, { likeCount: post.likeCount + 1 }, { new: true });
-    
-    res.json(updatedPost);
+    const index = post.likes.findIndex((id) => id === String(req.userId));
+
+    if(index === -1) {
+        post.likes.push(req.userId);  //like a post 
+    } else {
+        post.likes = post.likes.fliter((id) => id !== String(req.userId));  //dislike a post
+    }
+
+    const updatedPost = await PostMessage.findByIdAndUpdate(id, post, { new: true});
+
+    res.status(200).json(updatedPost);
 }
 
 // DISLIKE POST
 export const dislikePost = async (req, res) => {
     const { id } = req.params;
 
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
-    
+    if(!req.userId) { 
+        return res.json({ message: 'Unauthenticated' })
+    };
+
+    if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);;
+
     const post = await PostMessage.findById(id);
 
-    const updatedPost = await PostMessage.findByIdAndUpdate(id, { dislikeCount: post.dislikeCount + 1 }, { new: true });
-    
-    res.json(updatedPost);
+    const index = post.dislikes.findIndex((id) => id === String(req.userId));
+
+    if(index === -1) {
+        post.dislikes.push(req.userId);
+    } else {
+        post.dislikes = post.dislikes.fliter((id) => id !== String(req.userId)); 
+    }
+
+    const updatedPost = await PostMessage.findByIdAndUpdate(id, post, { new: true});
+
+    res.status(200).json(updatedPost);
 }
 
 export default router;

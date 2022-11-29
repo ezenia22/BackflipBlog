@@ -10,7 +10,7 @@
     background-color: #2b0d45;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 500px;
+    height: 600px;
     padding: 20px;
     width: 320px;
   }
@@ -30,19 +30,39 @@
     font-weight: 600;
     margin-top: 10px;
   }
+
+  .inputContainer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .inputContainerFirst {
+    height: 50px;
+    position: relative;
+    width: 50%;
+    margin-top: 20px;
+    margin-right: 10px;
+  }
+
+  .inputContainerLast {
+    height: 50px;
+    position: relative;
+    width: 50%;
+    margin-top: 20px;
+  }
   
   .inputContainer1 {
     height: 50px;
     position: relative;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   .inputContainer2 {
     height: 50px;
     position: relative;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 20px;
   }
   
   .input {

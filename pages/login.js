@@ -12,9 +12,9 @@ function LogIn() {
                 <div className={styles.title}>Welcome</div>
                 <div className={styles.subtitle}>Let's log into your account!</div>
                 <div className={styles.inputContainer1}>
-                    <input id="username" className={styles.input} type="text" placeholder=" " />
+                    <input id="email" className={styles.input} type="email" placeholder=" " />
                     <div className={styles.cut}></div>
-                    <label for="username" className={styles.placeholder}>Username</label>
+                    <label for="email" className={styles.placeholder}>Email</label>
                 </div>
                 <div className={styles.inputContainer2}>
                     <input id="password" className={styles.input} type="password" placeholder=" " />

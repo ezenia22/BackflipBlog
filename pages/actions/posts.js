@@ -13,7 +13,7 @@ export const getPosts = () => async (dispatch) => {
   }
 }
 
-
+// CREATE POST WORKED
 export const createPost = (post) => async (dispatch) => {
   try {
     const { data } = await api.createPost(post);
@@ -26,8 +26,10 @@ export const createPost = (post) => async (dispatch) => {
 
 // LIKE POST WORKED
 export const likePost = (id) => async (dispatch) => {
+  const user = JSON.parse(localStorage.getItem('profile'));
+
   try {
-    const { data } = await api.likePost(id);
+    const { data } = await api.likePost(id, user?.token);
 
     dispatch({ type: LIKE, payload: data });
   } catch (error) {
@@ -35,10 +37,12 @@ export const likePost = (id) => async (dispatch) => {
   }
 };
 
-
+// DISLIKE POST WORKED
 export const dislikePost = (id) => async (dispatch) => {
+  const user = JSON.parse(localStorage.getItem('profile'));
+
   try {
-    const { data } = await api.dislikePost(id);
+    const { data } = await api.dislikePost(id, user?.token);
 
     dispatch({ type: DISLIKE, payload: data });
   } catch (error) {
